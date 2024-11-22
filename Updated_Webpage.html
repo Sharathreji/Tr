@@ -13,8 +13,12 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #343a40;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
+        /* Header */
         header {
             background-color: #0056b3;
             color: #ffffff;
@@ -37,6 +41,7 @@
             margin: 5px 0;
         }
 
+        /* Navigation */
         nav {
             background-color: #007bff;
             display: flex;
@@ -59,6 +64,7 @@
             color: #0056b3;
         }
 
+        /* Banner */
         .banner {
             background-color: #e9ecef;
             text-align: center;
@@ -71,10 +77,12 @@
             color: #0056b3;
         }
 
+        /* Content */
         .content {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-grow: 1;
         }
 
         .content h3 {
@@ -83,6 +91,7 @@
             margin-bottom: 20px;
         }
 
+        /* Cards for 24-hour services */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -107,19 +116,17 @@
             color: #0056b3;
         }
 
+        /* Footer */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background-color: #007bff;
             text-align: center;
             color: white;
             padding: 10px 0;
-            z-index: 10;
-            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin-top: auto; /* Ensures the footer sticks to the bottom */
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
@@ -132,6 +139,7 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <img src="image-placeholder.jpg" alt="JMP Logo">
         <h1>JMP Medical Centre</h1>
@@ -139,6 +147,7 @@
         <p>Piravom, Ernakulam, 686664, Kerala</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="#about-us">About Us</a>
         <a href="#departments">Departments</a>
@@ -151,10 +160,12 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <!-- Banner -->
     <div class="banner">
         <h2>One of the Main Hospitals in Piravom</h2>
     </div>
 
+    <!-- Content Section -->
     <div class="content">
         <section id="about">
             <h3>About Us</h3>
@@ -192,6 +203,7 @@
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
         © 2024 JMP Medical Centre. All rights reserved.
     </footer>
