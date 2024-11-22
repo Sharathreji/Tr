@@ -109,7 +109,76 @@
             margin-bottom: 20px;
         }
 
-       
+        /* Cards for Departments */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card h4 {
+            margin: 0 0 10px;
+            color: #0056b3;
+            cursor: pointer;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+        .card ul li {
+            padding: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0056b3;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        footer .icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer .icons a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        footer .icons a:hover {
+            color: #ffc107;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .banner h2 {
+                font-size: 2em;
+            }
+            .scroll-text {
+                font-size: 1.2em;
+            }
         }
     </style>
     <style>
@@ -120,7 +189,45 @@
     border-top: 3px solid #0056b3;
 }
 
+/* Service Cards Grid */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
+/* Individual Service Card */
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Headings */
+.service-card h4 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Card Descriptions */
+.service-card p {
+    color: #343a40;
+    font-size: 1em;
+    line-height: 1.5;
+}
 </style>
 <style>
 /* 24-Hour Services Section */
@@ -129,6 +236,48 @@
     background-color: #f8f9fa;
     border-top: 3px solid #0056b3;
 }
+
+/* Service Cards Grid */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Individual Service Card */
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Headings */
+.service-card h4 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Card Descriptions */
+.service-card p {
+    color: #343a40;
+    font-size: 1em;
+    line-height: 1.5;
+}
+</style>
+</head>
 <style>
     /* Accordion Styles */
     .accordion {
@@ -318,14 +467,46 @@
 </div>
     <div class="banner">
         <h2>One of the Main Hospitals in Piravom</h2>
-    </div>
- 
+<style>
+/* Subtle Scrolling Text */
+.scroll-text {
+    font-size: 1.2em;
+    color: #0056b3;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.scroll-content {
+    display: inline-block;
+    animation: smoothScroll 15s linear infinite;
+    padding-right: 100%;
+}
+
+/* Smooth scrolling effect */
+@keyframes smoothScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroll-content:hover {
+    animation-play-state: paused; /* Pause animation on hover */
+}
+</style>
 </style>
     <div class="content">
         <section id="about">
             <h3>About Us</h3>
             <p>JMP Medical Centre is dedicated to providing exceptional healthcare services to the community. We are known for our commitment to patient care and advanced medical facilities.</p>
-          
+            
             <section id="twenty-four-hour-services">
                 <h3 style="text-align: center; color: #0056b3;">24-Hour Services</h3>
                 <div class="service-cards">
@@ -355,39 +536,15 @@
                     </div>
                 </div>
             </section> 
-                
-  <style>
-    footer {
-        background-color: #0056b3; /* Matches the header color */
-        color: #ffffff;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    footer .icons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    footer .icons a {
-        color: #ffffff;
-        font-size: 1.5em;
-        text-decoration: none;
-    }
-
-    footer p {
-        margin: 10px 0 0;
-    }
-</style>
-<footer>
-    <p>&copy; 2024 JMP Medical Centre. All rights reserved.</p>
-    <div class="icons">
-        <a href="#" aria-label="Phone">&#128222;</a>
-        <a href="#" aria-label="Email">&#128231;</a>
-        <a href="#" aria-label="Home">&#127968;</a>
-    </div>
-</footer>
+                     
+    <footer>
+        <p>&copy; 2024 JMP Medical Centre. All rights reserved.</p>
+        <div class="icons">
+            <a href="#">&#128222;</a>
+            <a href="#">&#128231;</a>
+            <a href="#">&#127968;</a>
+        </div>
+    </footer>
     <script>
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
