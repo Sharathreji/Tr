@@ -566,6 +566,14 @@
             section.style.display = section.style.display === 'block' ? 'none' : 'block';
         }
     </script>
+<script>
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('nav a.active')?.classList.remove('active');
+        link.classList.add('active');
+    });
+});
+</script>
     <script>
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
