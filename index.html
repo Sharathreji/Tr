@@ -398,14 +398,38 @@
                 </div>
             </section> 
                 
-    <footer>
-        <p>&copy; 2024 JMP Medical Centre. All rights reserved.</p>
-        <div class="icons">
-            <a href="#">&#128222;</a>
-            <a href="#">&#128231;</a>
-            <a href="#">&#127968;</a>
-        </div>
-    </footer>
+  <style>
+    footer {
+        background-color: #0056b3; /* Matches the header color */
+        color: #ffffff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    footer .icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    footer .icons a {
+        color: #ffffff;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    footer p {
+        margin: 10px 0 0;
+    }
+</style>
+<footer>
+    <p>&copy; 2024 JMP Medical Centre. All rights reserved.</p>
+    <div class="icons">
+        <a href="#" aria-label="Phone">&#128222;</a>
+        <a href="#" aria-label="Email">&#128231;</a>
+        <a href="#" aria-label="Home">&#127968;</a>
+    </div>
+</footer>
     <script>
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
