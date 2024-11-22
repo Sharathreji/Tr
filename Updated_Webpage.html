@@ -401,57 +401,68 @@
     color: white; /* White text on hover */
 }
 <style>
-/* Desktop Navigation Styling */
+/* Desktop Navigation - Interactive Design */
 @media (min-width: 768px) {
     nav {
-        display: flex !important;
+        display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to right, #007bff, #0056b3);
-        padding: 15px;
+        background-color: #007bff;
+        padding: 15px 20px;
         gap: 20px;
         position: relative;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1em;
-        font-weight: bold;
-        padding: 10px 15px;
-        border-radius: 5px;
-        position: relative;
-        transition: all 0.3s ease;
         overflow: hidden;
     }
 
-    nav a:hover {
-        color: #ffc107;
-        background: #ffffff22; /* Light overlay effect */
+    /* Navigation Links */
+    nav a {
+        position: relative;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: white;
+        padding: 10px 15px;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    /* Hover Effect with Gradient Background */
     nav a::before {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: #ffc107;
-        transition: width 0.3s ease;
+        inset: 0;
+        background: linear-gradient(90deg, #ffc107, #0056b3);
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
     }
 
     nav a:hover::before {
-        width: 100%;
+        transform: scaleX(1);
     }
 
-    nav a.active {
-        color: #ffc107;
+    /* Hover Animation */
+    nav a:hover {
+        color: #0056b3;
+        transform: scale(1.1);
     }
 
-    nav a.active::before {
+    /* Active Link Indicator */
+    nav a.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
         width: 100%;
+        height: 3px;
+        background: #ffc107;
+        transition: width 0.3s ease-in-out;
     }
+}
+
+/* Active Indicator Animation */
+nav a.active {
+    color: #ffc107;
 }
  </style>
 <body>
@@ -575,18 +586,13 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 </script>
     <script>
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const activeButton = document.querySelector('.accordion-header.active');
-                if (activeButton && activeButton !== button) {
-                    activeButton.classList.remove('active');
-                    activeButton.nextElementSibling.style.display = 'none';
-                }
-                button.classList.toggle('active');
-                const content = button.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
+        // Set active link on click
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('nav a.active')?.classList.remove('active');
+        link.classList.add('active');
+    });
+});
     </script>
 <script>
 document.getElementById('menu-toggle').addEventListener('click', function () {
